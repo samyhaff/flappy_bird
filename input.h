@@ -2,7 +2,8 @@
 #define INPUT_H
 
 #include <SDL2/SDL.h>
+#include "constants.h"
 
-int processQuit(SDL_Event *);
+int processInput(SDL_Event *, Bird *);
 
 #endif

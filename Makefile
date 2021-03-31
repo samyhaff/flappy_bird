@@ -20,5 +20,5 @@ main.o: main.c constants.h draw.h input.h
 logic.o: constants.h logic.c
 	$(CC) $(CXXFLAGS) -c logic.c
 
-input.o: input.c 
+input.o: input.c constants.h
 	$(CC) $(CXXFLAGS) -c input.c

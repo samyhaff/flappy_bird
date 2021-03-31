@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
+#include "constants.h"
 
-int processQuit(SDL_Event *eventPtr) 
+int processInput(SDL_Event *eventPtr, Bird *bird) 
 {
     while (SDL_PollEvent(eventPtr)) 
     {
@@ -15,6 +16,9 @@ int processQuit(SDL_Event *eventPtr)
                 {
                     case SDLK_ESCAPE:
                         return 1;
+                    break;
+                    case SDLK_SPACE:
+                        bird->vy = -FLAPP;
                     break;
                 }
             }
