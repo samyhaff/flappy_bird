@@ -4,5 +4,6 @@
 #include "constants.h"
 
 void updatePos(Bird *);
+void updatePipe(Pipe[]);
 
 #endif

@@ -3,6 +3,7 @@
 #include "draw.h"
 #include "input.h"
 #include "logic.h"
+#include "stdlib.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +12,15 @@ int main(int argc, char *argv[])
     SDL_Window *window = SDL_CreateWindow("DVD", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, 0);
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    Bird bird = {WIDTH / 3, HEIGHT / 2, 0, HEIGHT / 20, HEIGHT / 20};
+    Bird bird = {WIDTH / 4, HEIGHT / 2, 0};
+
+    Pipe pipes[4];
+    for (int i = 0; i < 4; i++)
+    {
+        pipes[i].x = WIDTH + (i * SPACING);
+        pipes[i].y = rand() % (HEIGHT - GAP);
+        pipes[i].width = PIPE_WIDTH;
+    }
 
     int done = 0;
     SDL_Event event;
@@ -19,7 +28,8 @@ int main(int argc, char *argv[])
     while (!done)
     {
         updatePos(&bird);
-        render(renderer, bird);
+        updatePipe(pipes);
+        render(renderer, bird, pipes);
         done = processInput(&event, &bird);
     }
 
