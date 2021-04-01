@@ -13,8 +13,10 @@ void render(SDL_Renderer *renderer, Bird bird, Pipe pipes[])
     for (int i = 0; i < 4; i++)
     {
         SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-        SDL_Rect pipe_rect = {pipes[i].x, 0, PIPE_WIDTH, pipes[i].y};
-        SDL_RenderFillRect(renderer, &pipe_rect);
+        SDL_Rect pipe_top_rect = {pipes[i].x, 0, PIPE_WIDTH, pipes[i].y};
+        SDL_RenderFillRect(renderer, &pipe_top_rect);
+        SDL_Rect pipe_bottom_rect = {pipes[i].x, pipes[i].y + GAP, PIPE_WIDTH, HEIGHT};
+        SDL_RenderFillRect(renderer, &pipe_bottom_rect);
     }
 
     SDL_RenderPresent(renderer);

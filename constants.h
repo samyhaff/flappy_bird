@@ -10,9 +10,9 @@
 #define BIRD_HEIGHT HEIGHT / 15
 
 #define SPACING     500 
-#define GAP         400
+#define GAP         300
 #define PIPE_WIDTH  200
-#define PIPE_SPEED  5
+#define PIPE_SPEED    5
 
 typedef struct Bird Bird;
 struct Bird 
