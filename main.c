@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         updatePos(&bird);
         updatePipe(pipes);
         render(renderer, bird, pipes);
-        done = processInput(&event, &bird);
+        done = processInput(&event, &bird) || gameOver(bird, pipes);
     }
 
     SDL_DestroyWindow(window);

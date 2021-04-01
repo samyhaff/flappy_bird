@@ -33,3 +33,13 @@ void updatePipe(Pipe pipes[])
         pipes[i].x -= PIPE_SPEED;      
     }
 }
+
+int gameOver(Bird bird, Pipe pipes[])
+{
+    for (int i = 0; i < 5; i++) 
+    {
+        if ((pipes[i].x <= bird.x + BIRD_WIDTH) && (pipes[i].x + PIPE_WIDTH >= bird.x) && (bird.y <= pipes[i].y || bird.y >= pipes[i].y + GAP))
+            return 1;
+    }
+    return 0;
+}

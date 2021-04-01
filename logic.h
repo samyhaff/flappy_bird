@@ -5,5 +5,6 @@
 
 void updatePos(Bird *);
 void updatePipe(Pipe[]);
+int gameOver(Bird, Pipe[]);
 
 #endif
