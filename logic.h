@@ -4,7 +4,7 @@
 #include "constants.h"
 
 void updatePos(Bird *);
-void updatePipe(Pipe[]);
+void updatePipe(Pipe[], int *);
 int gameOver(Bird, Pipe[]);
 
 #endif

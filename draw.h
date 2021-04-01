@@ -4,6 +4,6 @@
 #include <SDL2/SDL.h>
 #include "constants.h"
 
-void render(SDL_Renderer *, Bird, Pipe[]);
+void render(SDL_Renderer *, Bird, Pipe[]); 
 
 #endif

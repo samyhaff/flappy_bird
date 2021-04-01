@@ -19,7 +19,7 @@ void updatePos(Bird *bird)
     }
 }
 
-void updatePipe(Pipe pipes[])
+void updatePipe(Pipe pipes[], int *score)
 {
     for (int i = 0; i < 5; i++) 
     {
@@ -29,6 +29,7 @@ void updatePipe(Pipe pipes[])
             pipes[4].y = pipes[i].y;
             pipes[i].x = WIDTH;
             pipes[i].y = rand() % (HEIGHT - GAP);    
+            score+=1;
         }
         pipes[i].x -= PIPE_SPEED;      
     }
