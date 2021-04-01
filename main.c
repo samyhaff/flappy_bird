@@ -14,12 +14,11 @@ int main(int argc, char *argv[])
 
     Bird bird = {WIDTH / 4, HEIGHT / 2, 0};
 
-    Pipe pipes[4];
+    Pipe pipes[5];
     for (int i = 0; i < 4; i++)
     {
         pipes[i].x = WIDTH + (i * SPACING);
         pipes[i].y = rand() % (HEIGHT - GAP);
-        pipes[i].width = PIPE_WIDTH;
     }
 
     int done = 0;
